@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:55662",
+      "sslPort": 44386
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "db": "server=localhost;port=3316;user=root;password=root;database=test;persistsecurityinfo=True;Character Set=utf8;"
+      }
+    },
+    "IdiomsSolitaire.Blazor": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "db": "server=localhost;port=3316;user=root;password=root;database=test;persistsecurityinfo=True;Character Set=utf8;"
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+﻿@page "/search"
+@using IdiomsSolitaire.Core;
+@using IdiomsSolitaire.Blazor.Data;
+@inject IChengYuDalService dalService
+
+@inject NavigationManager NavigationManager
+<div class="top_nav">
+    <a class="reset_btn" @onclick="Reset">退出 ></a>
+
+</div>
+
+<div class="search_input">
+    <input type="text" @bind="inputName" placeholder="请输入" />
+
+    <div class="search_btn">
+
+        <button @onclick="Start">查询</button>
+
+    </div>
+</div>
+<div class="search_list">
+    @foreach (var item in values)
+    {
+        <div class="search_item">
+
+            <div ><span class="name">@item.Name</span>(@item.Spell)</div>
+
+            <div>@item.Content</div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<ChengYu> values = new List<ChengYu>();
+
+
+    private string inputName = "";
+
+    private void Reset()
+    {
+
+        NavigationManager.NavigateTo("/");
+    }
+
+
+    private void Start()
+    {
+
+
+        if (!string.IsNullOrWhiteSpace(inputName))
+        {
+            var result = dalService.Search(inputName);
+
+            values = result;
+        }
+
+    }
+}

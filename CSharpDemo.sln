@@ -9,6 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqDemo", "src\RabbitM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqDemo.Consumer", "src\RabbitMqDemo.Consumer\RabbitMqDemo.Consumer.csproj", "{E6586FE8-622A-483A-9BA0-8C073E45EAA6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLDemo", "src\MLDemo\MLDemo.csproj", "{AA075197-8A18-4218-8E6F-7A93E69E14B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{9F4AA61C-4746-4001-A3B0-C301C56ACA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdiomsSolitaire", "IdiomsSolitaire", "{A466BB80-1E84-48CA-9DE9-7629B9712803}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdiomsSolitaire.Core", "web\IdiomsSolitaire\IdiomsSolitaire.Core\IdiomsSolitaire.Core.csproj", "{C44AC3A7-8417-442F-BE24-C0D971172608}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdiomsSolitaire.Blazor", "web\IdiomsSolitaire\IdiomsSolitaire.Blazor\IdiomsSolitaire.Blazor.csproj", "{8C401C1B-3361-4BD8-B291-999C745F7943}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +33,18 @@ Global
 		{E6586FE8-622A-483A-9BA0-8C073E45EAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6586FE8-622A-483A-9BA0-8C073E45EAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6586FE8-622A-483A-9BA0-8C073E45EAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA075197-8A18-4218-8E6F-7A93E69E14B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA075197-8A18-4218-8E6F-7A93E69E14B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA075197-8A18-4218-8E6F-7A93E69E14B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA075197-8A18-4218-8E6F-7A93E69E14B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44AC3A7-8417-442F-BE24-C0D971172608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44AC3A7-8417-442F-BE24-C0D971172608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44AC3A7-8417-442F-BE24-C0D971172608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44AC3A7-8417-442F-BE24-C0D971172608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C401C1B-3361-4BD8-B291-999C745F7943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C401C1B-3361-4BD8-B291-999C745F7943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C401C1B-3361-4BD8-B291-999C745F7943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C401C1B-3361-4BD8-B291-999C745F7943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +52,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{463099D7-C4D7-4411-9795-A578EBCDFA5B} = {6CA4EDAD-6569-4D74-8D21-7DB783A213F7}
 		{E6586FE8-622A-483A-9BA0-8C073E45EAA6} = {6CA4EDAD-6569-4D74-8D21-7DB783A213F7}
+		{AA075197-8A18-4218-8E6F-7A93E69E14B1} = {6CA4EDAD-6569-4D74-8D21-7DB783A213F7}
+		{A466BB80-1E84-48CA-9DE9-7629B9712803} = {9F4AA61C-4746-4001-A3B0-C301C56ACA18}
+		{C44AC3A7-8417-442F-BE24-C0D971172608} = {A466BB80-1E84-48CA-9DE9-7629B9712803}
+		{8C401C1B-3361-4BD8-B291-999C745F7943} = {A466BB80-1E84-48CA-9DE9-7629B9712803}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB6E5CF2-4611-492E-B22D-11D99A3846BE}

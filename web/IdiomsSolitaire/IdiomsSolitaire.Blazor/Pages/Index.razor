@@ -1,0 +1,140 @@
+﻿@page "/index"
+@using IdiomsSolitaire.Core;
+@using IdiomsSolitaire.Blazor.Data;
+@inject IChengYuDalService dalService
+
+@inject NavigationManager NavigationManager
+
+
+<div class="top_nav">
+    <a class="reset_btn" @onclick="Reset">退出 ></a>
+
+</div>
+
+<div class="info">
+    @foreach (var item in values)
+    {
+        <div>@item.User : @item.Content</div>
+    }
+
+
+    <div class="error">@message</div>
+</div>
+
+
+
+<div class="area">
+    <input type="text" class="input_text" @bind="inputName" placeholder="请输入" />
+
+    <div class="btns">
+
+        <button class="submit_btn" @onclick="Start">确定</button>
+
+    </div>
+</div>
+
+
+
+
+@code {
+    private List<DisplayRecord> values = new List<DisplayRecord>();
+
+    private int currentCount = 0;
+
+    private string inputName = "";
+
+    private string message = "";
+
+    private void Reset()
+    {
+        values = new List<DisplayRecord>();
+        message = "";
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void Start()
+    {
+
+
+        if (!string.IsNullOrWhiteSpace(inputName))
+        {
+
+            if (!IsValid(inputName))
+            {
+                message = "你确定你输入的是成语？";
+                return;
+            }
+
+            inputName = inputName.Trim();
+
+            if (values.Count > 0)
+            {
+                var prev = values.Last().Content;
+                var prevLastCode = prev.Last().ToString();
+                var inputFirstCode = inputName.First().ToString();
+
+
+                if (prevLastCode != inputFirstCode)
+                {
+                    message = $"你填写得不对！{prevLastCode},{inputFirstCode}";
+                    return;
+                }
+            }
+
+            values.Add(new DisplayRecord()
+            {
+                User = "你",
+                Content = inputName,
+                Time = DateTime.Now
+            });
+
+            GetNextValue(inputName);
+            message = "";
+
+        }
+        else
+        {
+            message = "请至少写点什么吧";
+        }
+
+        
+        inputName = "";
+    }
+
+    private bool IsValid(string input)
+    {
+        if (!string.IsNullOrWhiteSpace(input))
+        {
+            var item = dalService.GetByName(input);
+
+            if (item != null)
+            {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
+    private void GetNextValue(string input)
+    {
+        string firstCode = input.Last().ToString();
+
+        var item = dalService.GetByFirstName(firstCode);
+
+        if (item != null)
+        {
+            values.Add(new DisplayRecord()
+            {
+                User = "电脑",
+                Content = item.Name.Trim(),
+                Time = DateTime.Now
+            });
+        }
+        else
+        {
+            message = "找不到答案";
+        }
+    }
+}

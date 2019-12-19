@@ -1,0 +1,103 @@
+﻿body {
+  background-color: #cdc;
+}
+
+.title {
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.btn {
+  padding: 0 30px;
+  width: 100%;
+  left: 0;
+}
+
+.btn a {
+  height: 3rem;
+  line-height: 3rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(220, 255, 252);
+  border: 1px solid rgb(26, 199, 184);
+  border-radius: 5px;
+}
+
+.input_text {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 10px;
+}
+
+.info {
+  height: 50vh;
+  overflow-y: scroll;
+  background-color: black;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error {
+  color: #f00;
+}
+
+.btns {
+}
+
+.btns .submit_btn {
+  width: 100%;
+  border-radius: 5px;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 1rem 0;
+}
+
+.top_nav {
+  height: 3rem;
+}
+
+.reset_btn {
+  float: right;
+  line-height: 3rem;
+}
+
+/* search */
+
+.search_input {
+  width: 100%;
+  position: relative;
+  padding-right: 11rem;
+}
+
+.search_input input {
+  width: 100%;
+}
+
+.search_input .search_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10rem;
+}
+
+.search_input .search_btn button {
+  width: 100%;
+}
+
+.search_list {
+    padding-bottom: 50px;
+}
+
+.search_list .search_item {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
