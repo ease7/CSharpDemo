@@ -23,11 +23,13 @@
     {
         <div class="search_item">
 
-            <div ><span class="name">@item.Name</span>(@item.Spell)</div>
+            <div><span class="name">@item.Name</span>(@item.Spell)</div>
 
             <div>@item.Content</div>
         </div>
     }
+
+    <div>@message</div>
 </div>
 
 @code {
@@ -35,6 +37,8 @@
 
 
     private string inputName = "";
+
+    private string message = "";
 
     private void Reset()
     {
@@ -45,14 +49,21 @@
 
     private void Start()
     {
-
-
-        if (!string.IsNullOrWhiteSpace(inputName))
+        try
         {
-            var result = dalService.Search(inputName);
 
-            values = result;
+            if (!string.IsNullOrWhiteSpace(inputName))
+            {
+                var result = dalService.Search(inputName);
+
+                values = result;
+            }
         }
+        catch (Exception ex)
+        {
+            this.message = ex.Message + ex.StackTrace;
+        }
+
 
     }
 }
