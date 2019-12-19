@@ -1,27 +1,26 @@
-## 安装镜像
+## 成语接龙小游戏
 
-```
-docker pull mysql
-```
+数据源：mysql
 
-## 启动容器
+### 数据获取
 
+本数据来源于网络，总共31852条数据，不能说很全，基本包含大部分的成语。
 
-```
-docker run -d --name mysql001 --rm -p 3306:3306 \
--e MYSQL_ROOT_PASSWORD=root mysql
+### Docker的方式发布
 
-```
-
-## .net core 容器连接mysql容器
-
-创建网络连接
+* 创建网络连接
 
 ```
 docker network create -d bridge net_mysql
 ```
 
-* 加入网络连接
+* 拉取mysql镜像
+
+```
+docker pull mysql
+```
+
+* 启动mysql, 并加入网络连接
 
 ```
 docker run -d --name mysql002 \
