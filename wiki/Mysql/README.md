@@ -42,3 +42,16 @@ docker run -d --name test001 \
 -e db='server=mysql002;port=3306;user=root;password=root;database=test;' \
 chengyu
 ```
+
+# ubuntu
+
+```
+apt install mysql-server
+
+netstat -tap | grep mysql
+
+```
+
+查看状态
+
+systemctl status mysql
