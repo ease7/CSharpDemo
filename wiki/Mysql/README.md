@@ -43,7 +43,7 @@ docker run -d --name test001 \
 chengyu
 ```
 
-# ubuntu
+# ubuntu 部署
 
 ```
 apt install mysql-server
@@ -51,7 +51,29 @@ apt install mysql-server
 netstat -tap | grep mysql
 
 ```
+重启服务
+```
+/etc/init.d/mysql restart
+```
 
 查看状态
 
 systemctl status mysql
+
+
+连接尝试
+
+```
+mysql -h127.0.0.1 -P3306 -uroot -p
+```
+
+创建用户
+
+```sql
+USE mysql;
+CREATE USER 'tester'@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'tester'@'localhost';
+UPDATE user SET plugin='auth_socket' WHERE User='tester';
+FLUSH PRIVILEGES;
+exit;
+```
