@@ -42,7 +42,7 @@ docker run -d --name mysql002 \
 docker run -d --name test001 \
 --network net_mysql \
 -p 5000:5000 \
--e db='server=172.17.0.1;port=3306;user=root;password=root;database=test;' \
+-e db='server=mysql002;port=3306;user=root;password=root;database=test;' \
 chengyu
 ```
 
