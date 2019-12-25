@@ -106,3 +106,33 @@ Redis的事务功能较弱(不支持回滚)，而且集群版本(自研和官方
 
 不相干的业务拆分，公共数据做服务化。
 
+### 2、使用连接池
+
+### 3、合理的加密
+
+设置合理的密码，如有必要可以使用SSL加密访问
+
+### 4、淘汰策略
+
+根据自身业务类型，选好maxmemory-policy(最大内存淘汰策略)，设置好过期时间。
+
+默认策略是volatile-lru，即超过最大内存后，在过期键中使用lru算法进行key的剔除，保证不过期数据不被删除，但是可能会出现OOM问题。
+
+**其他策略如下**
+
+allkeys-lru：根据LRU算法删除键，不管数据有没有设置超时属性，直到腾出足够空间为止。
+allkeys-random：随机删除所有键，直到腾出足够空间为止。
+volatile-random:随机删除过期键，直到腾出足够空间为止。
+volatile-ttl：根据键值对象的ttl属性，删除最近将要过期数据。如果没有，回退到noeviction策略。
+noeviction：不会剔除任何数据，拒绝所有写入操作并返回客户端错误信息"(error) OOM command not allowed when used memory"，此时Redis只响应读操作。
+
+四、相关工具
+
+1. 首选库StackExchange.Redis
+
+```
+var redisConn = ConnectionMultiplexer.Connect(connectionString);
+```
+
+注意：ConnectionMultiplexer 实现了IDisposable接口，不需要是要将其释放 , 创建一个ConnectionMultiplexer是十分昂贵的 ，建议重用一个ConnectionMultiplexer对象。
+
