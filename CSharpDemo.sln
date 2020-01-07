@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdiomsSolitaire.Core", "web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdiomsSolitaire.Blazor", "web\IdiomsSolitaire\IdiomsSolitaire.Blazor\IdiomsSolitaire.Blazor.csproj", "{8C401C1B-3361-4BD8-B291-999C745F7943}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baidu.AIDemo", "src\Baidu.AIDemo\Baidu.AIDemo.csproj", "{43EA5B79-D5CC-4121-A025-BE410443C630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8C401C1B-3361-4BD8-B291-999C745F7943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C401C1B-3361-4BD8-B291-999C745F7943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C401C1B-3361-4BD8-B291-999C745F7943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43EA5B79-D5CC-4121-A025-BE410443C630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EA5B79-D5CC-4121-A025-BE410443C630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EA5B79-D5CC-4121-A025-BE410443C630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EA5B79-D5CC-4121-A025-BE410443C630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{A466BB80-1E84-48CA-9DE9-7629B9712803} = {9F4AA61C-4746-4001-A3B0-C301C56ACA18}
 		{C44AC3A7-8417-442F-BE24-C0D971172608} = {A466BB80-1E84-48CA-9DE9-7629B9712803}
 		{8C401C1B-3361-4BD8-B291-999C745F7943} = {A466BB80-1E84-48CA-9DE9-7629B9712803}
+		{43EA5B79-D5CC-4121-A025-BE410443C630} = {6CA4EDAD-6569-4D74-8D21-7DB783A213F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB6E5CF2-4611-492E-B22D-11D99A3846BE}
